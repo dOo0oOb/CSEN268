@@ -1,7 +1,7 @@
-import 'package:CSEN268_F24/pages/home_page.dart';
-import 'package:CSEN268_F24/pages/sign_in/sign_in_page.dart';
-import 'package:CSEN268_F24/pages/stateful_login_page.dart';
-import 'package:CSEN268_F24/repositories/authentication/authentication_repository.dart';
+import 'pages/home_page.dart';
+import 'pages/sign_in/sign_in_page.dart';
+import 'pages/stateful_login_page.dart';
+import 'repositories/authentication/authentication_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

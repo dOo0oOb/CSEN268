@@ -1,4 +1,4 @@
-import 'package:CSEN268_F24/pages/sign_in/bloc/sign_in_bloc.dart';
+import '../../../pages/sign_in/bloc/sign_in_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -1,4 +1,4 @@
-import 'package:CSEN268_F24/repositories/authentication/authentication_repository.dart';
+import '../../../repositories/authentication/authentication_repository.dart';
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 

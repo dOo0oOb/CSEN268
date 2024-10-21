@@ -1,5 +1,5 @@
-import 'package:CSEN268_F24/pages/login/views/logged_in_view.dart';
-import 'package:CSEN268_F24/repositories/authentication/authentication_repository.dart';
+import '../../../pages/login/views/logged_in_view.dart';
+import '../../../repositories/authentication/authentication_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

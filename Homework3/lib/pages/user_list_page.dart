@@ -1,4 +1,4 @@
-import 'package:CSEN268_F24/widgets/user_list_tile.dart';
+import '../../../widgets/user_list_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_lorem/flutter_lorem.dart';
 import 'package:uuid/v4.dart';

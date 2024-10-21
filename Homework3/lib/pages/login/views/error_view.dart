@@ -1,4 +1,4 @@
-import 'package:CSEN268_F24/pages/login/cubit/login_cubit.dart';
+import '../../../pages/login/cubit/login_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
