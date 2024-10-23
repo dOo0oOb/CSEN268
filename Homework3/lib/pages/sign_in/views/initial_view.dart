@@ -16,7 +16,6 @@ class _InitialViewState extends State<InitialView> {
   String? password;
   @override
   void initState() {
-    // TODO: implement initState
     bloc = BlocProvider.of<SignInBloc>(context);
     super.initState();
   }

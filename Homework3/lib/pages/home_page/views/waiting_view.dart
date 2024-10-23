@@ -6,7 +6,7 @@ class WaitingView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Login")),
+      appBar: AppBar(title: const Text("sorting")),
       body: const Center(
         child: SizedBox(
           height: 40,

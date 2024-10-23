@@ -1,19 +1,19 @@
-import '../../../widgets/user_list_tile.dart';
+import '../../../widgets/book_image.dart';
 import 'package:flutter/material.dart';
 
-import '../model/user.dart';
-import '../widgets/user_card.dart';
+import '../model/book.dart';
+import '../widgets/book_detail.dart';
 
-class UserListPage extends StatelessWidget {
-  const UserListPage({super.key});
+class BookListPage extends StatelessWidget {
+  const BookListPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    List<User> userList = List.generate(20, (index) {
-      return User.createMockUser();
+    List<Book> bookList = List.generate(20, (index) {
+      return Book.createMockBook();
     });
 
-    print(userList);
+    print(bookList);
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -25,13 +25,13 @@ class UserListPage extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: EdgeInsets.only(left: index == 0 ? 20 : 0),
-                    child: UserCard(user: userList[index]),
+                    child: BookDetail(book: bookList[index]),
                   );
                 },
                 separatorBuilder: (context, index) {
                   return Divider();
                 },
-                itemCount: userList.length,
+                itemCount: bookList.length,
               ),
             ),
             Container(
@@ -39,12 +39,12 @@ class UserListPage extends StatelessWidget {
               child: ListView.separated(
                 // scrollDirection: Axis.vertical,
                 itemBuilder: (context, index) {
-                  return UserListTile(user: userList[index]);
+                  return BookImage(book: bookList[index]);
                 },
                 separatorBuilder: (context, index) {
                   return Divider();
                 },
-                itemCount: userList.length,
+                itemCount: bookList.length,
               ),
             ),
             Container(height: 300, color: Colors.red, width: double.infinity),
@@ -53,7 +53,7 @@ class UserListPage extends StatelessWidget {
       ),
       appBar: AppBar(
         centerTitle: true,
-        title: const Text("User List"),
+        title: const Text("Book List"),
       ),
     );
   }

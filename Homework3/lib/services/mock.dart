@@ -32,7 +32,19 @@ class Mock {
     return UuidV4().generate();
   }
 
-  static String imageUrl({String? firstName, String? lastName}) {
+  static String title() {
+    return lorem(paragraphs:1, words: 3).replaceAll(".", "");
+  }
+
+  static String author() {
+    return lorem(paragraphs:1, words: 2).replaceAll(".", "");
+  }
+
+  static String description() {
+    return lorem(paragraphs:1, words: 500).replaceAll(".", "");
+  }
+
+  static String imageUrl({String? title, String? author}) {
     return 'https://placehold.co/600x400/'
         '${colors[math.Random().nextInt(10)]}'
         '/${colors[math.Random().nextInt(10)]}.png';

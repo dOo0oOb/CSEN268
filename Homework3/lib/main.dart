@@ -1,11 +1,9 @@
-import 'pages/home_page.dart';
-import 'pages/sign_in/sign_in_page.dart';
-import 'pages/stateful_login_page.dart';
+import 'pages/home_page/home_page.dart';
 import 'repositories/authentication/authentication_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'pages/login/login_page.dart';
+import 'repositories/books/book_repository.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return RepositoryProvider(
       create: (context) {
-        return (OktaAuthenticationRepository() as AuthenticationRepository);
+        return (OktaBookRepository() as BookRepository);
       },
       child: MaterialApp(
           title: 'Flutter Demo',
@@ -29,9 +27,6 @@ class MyApp extends StatelessWidget {
           initialRoute: '/',
           routes: {
             '/': (context) => const HomePage(),
-            '/noBloc': (context) => const StatefulLoginPage(),
-            '/bloc': (context) => const SignInPage(),
-            '/cubit': (context) => const LoginPage(),
           }),
     );
   }

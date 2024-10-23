@@ -1,8 +1,7 @@
-import '../../../pages/sign_in/sign_in_page.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class Lab7HomePage extends StatelessWidget {
+  const Lab7HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
