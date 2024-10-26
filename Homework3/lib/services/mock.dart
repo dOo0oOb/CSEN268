@@ -1,5 +1,4 @@
 import 'package:flutter_lorem/flutter_lorem.dart';
-import 'package:uuid/v4.dart';
 import 'dart:math' as math;
 
 const List<String> colors = [
@@ -16,22 +15,6 @@ const List<String> colors = [
 ];
 
 class Mock {
-  static String firstName() {
-    return lorem(paragraphs: 1, words: 1).replaceAll(".", "");
-  }
-
-  static String lastName() {
-    return lorem(paragraphs: 1, words: 1).replaceAll(".", "");
-  }
-
-  static String email() {
-    return "${firstName()}@${lastName()}.com";
-  }
-
-  static String uid() {
-    return UuidV4().generate();
-  }
-
   static String title() {
     return lorem(paragraphs:1, words: 3).replaceAll(".", "");
   }
@@ -41,12 +24,12 @@ class Mock {
   }
 
   static String description() {
-    return lorem(paragraphs:1, words: 500).replaceAll(".", "");
+    return lorem(paragraphs:1, words: 700).replaceAll(".", "");
   }
 
-  static String imageUrl({String? title, String? author}) {
-    return 'https://placehold.co/600x400/'
-        '${colors[math.Random().nextInt(10)]}'
-        '/${colors[math.Random().nextInt(10)]}.png';
+  static String imageUrl() {
+    return 'https://placehold.co/120x160/'
+        '${colors[math.Random().nextInt(colors.length)]}'
+        '/${colors[math.Random().nextInt(colors.length)]}.png';
   }
 }
