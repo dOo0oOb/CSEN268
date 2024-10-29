@@ -22,6 +22,11 @@ class RouteName {
   static const users = "users";
   static const editprofile = "editprofile";
   static const adduser = "adduser";
+  static const filterByAuthor = "filterByAuthor";
+  static const filterByTitle = "filterByTitle";
+  static const bookDetail = "bookDetail";
+
+
 }
 
 final GlobalKey<NavigatorState> rootNavigatorKey =
@@ -91,6 +96,38 @@ GoRouter routerDemo(AuthenticationBloc authenticationBloc) {
                         },
                       )
                     ]),
+                // GoRoute(
+                // path: 'author',
+                // name: RouteName.filterByAuthor,
+                // builder: (BuildContext context, GoRouterState state) {
+                //   return const RouterDemoAuthor();
+                // },
+                // routes: [
+                //   GoRoute(
+                //     path: 'detail',
+                //     name: RouteName.bookDetail,
+                //     parentNavigatorKey: rootNavigatorKey,
+                //     builder: (BuildContext context, GoRouterState state) {
+                //       return const RouterDemoBookDetail();
+                //     },
+                //   )
+                // ]),
+                // GoRoute(
+                // path: 'title',
+                // name: RouteName.filterByTitle,
+                // builder: (BuildContext context, GoRouterState state) {
+                //   return const RouterDemoTitle();
+                // },
+                // routes: [
+                //   GoRoute(
+                //     path: 'detail',
+                //     name: RouteName.bookDetail,
+                //     parentNavigatorKey: rootNavigatorKey,
+                //     builder: (BuildContext context, GoRouterState state) {
+                //       return const RouterDemoBookDetail();
+                //     },
+                //   )
+                // ]),
               ],
             )
           ]),

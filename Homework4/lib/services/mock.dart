@@ -16,6 +16,19 @@ const List<String> colors = [
 ];
 
 class Mock {
+
+  static String title() {
+    return lorem(paragraphs:1, words: 3).replaceAll(".", "");
+  }
+
+  static String author() {
+    return lorem(paragraphs:1, words: 2).replaceAll(".", "");
+  }
+
+  static String description() {
+    return lorem(paragraphs:1, words: 700).replaceAll(".", "");
+  }
+
   static String firstName() {
     return lorem(paragraphs: 1, words: 1).replaceAll(".", "");
   }
@@ -32,9 +45,9 @@ class Mock {
     return UuidV4().generate();
   }
 
-  static String imageUrl({String? firstName, String? lastName}) {
-    return 'https://placehold.co/600x400/'
-        '${colors[math.Random().nextInt(10)]}'
-        '/${colors[math.Random().nextInt(10)]}.png';
+  static String imageUrl() {
+    return 'https://placehold.co/120x160/'
+        '${colors[math.Random().nextInt(colors.length)]}'
+        '/${colors[math.Random().nextInt(colors.length)]}.png';
   }
 }
