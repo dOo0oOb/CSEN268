@@ -44,7 +44,7 @@ final GlobalKey<NavigatorState> shellNavigatorKey =
 GoRouter routerDemo(AuthenticationBloc authenticationBloc) {
   return GoRouter(
     navigatorKey: rootNavigatorKey,
-    initialLocation: '/users',
+    initialLocation: '/login',
     refreshListenable: StreamToListenable([authenticationBloc.stream]),
     redirect: (context, state) async {
       if (authenticationBloc.state is AuthenticationLoggedOut &&
@@ -53,7 +53,7 @@ GoRouter routerDemo(AuthenticationBloc authenticationBloc) {
       } else {
         if ((state.fullPath?.startsWith("/login") ?? false) &&
             authenticationBloc.state is AuthenticationLoggedIn) {
-          return "/users";
+          return "/byAuthor";
         }
       }
       return null;
@@ -71,6 +71,7 @@ GoRouter routerDemo(AuthenticationBloc authenticationBloc) {
           name: RouteName.home,
           builder: (context, state) {
             return const RouterDemoHome();
+            //return const RouterAuthor();
           },
           routes: [
             ShellRoute(

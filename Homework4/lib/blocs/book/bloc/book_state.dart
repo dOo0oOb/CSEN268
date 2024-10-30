@@ -1,4 +1,4 @@
-part of 'books_bloc.dart';
+part of 'book_bloc.dart';
 
 abstract class BookState {}
 

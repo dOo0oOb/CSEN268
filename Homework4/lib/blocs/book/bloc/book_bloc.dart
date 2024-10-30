@@ -2,8 +2,8 @@
 import 'package:bloc/bloc.dart';
 import '../../../model/book.dart';
 
-part 'books_event.dart';
-part 'books_state.dart';
+part 'book_event.dart';
+part 'book_state.dart';
 
 
 class BookBloc extends Bloc<BookEvent, BookState> {
