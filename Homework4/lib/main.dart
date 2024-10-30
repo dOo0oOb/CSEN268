@@ -8,6 +8,7 @@ import 'package:CSEN268_F24/repositories/authentication/authentication_repositor
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'blocs/book/bloc/book_bloc.dart';
 import 'navigation/navigator_route.dart';
 import 'pages/login/login_page.dart';
 
@@ -18,15 +19,22 @@ void main() {
 class MyApp extends StatelessWidget {
   MyApp({super.key});
   final authenticationBloc = AuthenticationBloc();
+  final bookBloc = BookBloc();
   @override
   Widget build(BuildContext context) {
     return RepositoryProvider(
       create: (context) {
         return (OktaAuthenticationRepository() as AuthenticationRepository);
       },
-      child: BlocProvider(
-        create: (context) =>
-            authenticationBloc..add(AuthenticationLoginEvent()),
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => authenticationBloc..add(AuthenticationLoginEvent()),
+          ),
+          BlocProvider(
+            create: (context) => bookBloc..init()..add(LoadBooks()),
+          )
+        ],
         child: MaterialApp.router(
           title: 'Flutter Demo',
           theme: ThemeData(
