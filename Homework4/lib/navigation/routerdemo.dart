@@ -14,6 +14,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
+import '../model/book.dart';
+import '../pages/router_demo_pages/router_auther.dart';
+import '../pages/router_demo_pages/router_book_detail.dart';
+import '../pages/router_demo_pages/router_title.dart';
+
 class RouteName {
   static const home = "home";
   static const login = "login";
@@ -22,10 +27,12 @@ class RouteName {
   static const users = "users";
   static const editprofile = "editprofile";
   static const adduser = "adduser";
-  static const filterByAuthor = "filterByAuthor";
-  static const filterByTitle = "filterByTitle";
-  static const bookDetail = "bookDetail";
+  static const byAuthor = "byAuthor";
+  static const byTitle = "byTitle";
+  static const byAuthorDetail = "byAuthorDetail";
+  static const byTitleDetail = "byTitleDetail";
 
+  static final List<Book> bookList = List.generate(20, (index) => Book.createMockBook());
 
 }
 
@@ -96,38 +103,38 @@ GoRouter routerDemo(AuthenticationBloc authenticationBloc) {
                         },
                       )
                     ]),
-                // GoRoute(
-                // path: 'author',
-                // name: RouteName.filterByAuthor,
-                // builder: (BuildContext context, GoRouterState state) {
-                //   return const RouterDemoAuthor();
-                // },
-                // routes: [
-                //   GoRoute(
-                //     path: 'detail',
-                //     name: RouteName.bookDetail,
-                //     parentNavigatorKey: rootNavigatorKey,
-                //     builder: (BuildContext context, GoRouterState state) {
-                //       return const RouterDemoBookDetail();
-                //     },
-                //   )
-                // ]),
-                // GoRoute(
-                // path: 'title',
-                // name: RouteName.filterByTitle,
-                // builder: (BuildContext context, GoRouterState state) {
-                //   return const RouterDemoTitle();
-                // },
-                // routes: [
-                //   GoRoute(
-                //     path: 'detail',
-                //     name: RouteName.bookDetail,
-                //     parentNavigatorKey: rootNavigatorKey,
-                //     builder: (BuildContext context, GoRouterState state) {
-                //       return const RouterDemoBookDetail();
-                //     },
-                //   )
-                // ]),
+                GoRoute(
+                path: 'byAuthor',
+                name: RouteName.byAuthor,
+                builder: (BuildContext context, GoRouterState state) {
+                  return const RouterAuthor();
+                },
+                routes: [
+                  GoRoute(
+                    path: 'detail',
+                    name: RouteName.byAuthorDetail,
+                    parentNavigatorKey: rootNavigatorKey,
+                    builder: (BuildContext context, GoRouterState state) {
+                      return const RouterBookDetail();
+                    },
+                  )
+                ]),
+                GoRoute(
+                path: 'byTitle',
+                name: RouteName.byTitle,
+                builder: (BuildContext context, GoRouterState state) {
+                  return RouterTitle(bookList: RouteName.bookList);
+                },
+                routes: [
+                  GoRoute(
+                    path: 'detail',
+                    name: RouteName.byTitleDetail,
+                    parentNavigatorKey: rootNavigatorKey,
+                    builder: (BuildContext context, GoRouterState state) {
+                      return const RouterBookDetail();
+                    },
+                  )
+                ]),
               ],
             )
           ]),

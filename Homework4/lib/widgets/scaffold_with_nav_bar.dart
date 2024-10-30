@@ -21,12 +21,20 @@ class ScaffoldWithNavBar extends StatelessWidget {
       body: child,
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.list),
-            label: 'Users',
-          ),
+          // BottomNavigationBarItem(
+          //   icon: Icon(Icons.list),
+          //   label: 'Users',
+          // ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
+            label: 'By Author',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.text_fields),
+            label: 'By Title',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
             label: 'Profile',
           ),
         ],
@@ -38,20 +46,30 @@ class ScaffoldWithNavBar extends StatelessWidget {
 
   static int _calculateSelectedIndex(BuildContext context) {
     final String location = GoRouterState.of(context).uri.path;
-    if (location.startsWith('/users')) {
+    // if (location.startsWith('/users')) {
+    //   return 0;
+    // }
+    if (location.startsWith('/author')) {
       return 0;
     }
-    if (location.startsWith('/profile')) {
+    if (location.startsWith('/title')) {
       return 1;
+    }
+    if (location.startsWith('/profile')) {
+      return 2;
     }
     return 0;
   }
 
   void _onItemTapped(int index, BuildContext context) {
     switch (index) {
+      // case 0:
+      //   GoRouter.of(context).goNamed(RouteName.users);
       case 0:
-        GoRouter.of(context).goNamed(RouteName.users);
+        GoRouter.of(context).goNamed(RouteName.byAuthor);
       case 1:
+        GoRouter.of(context).goNamed(RouteName.byTitle);
+      case 2:
         GoRouter.of(context).goNamed(RouteName.profile);
     }
   }
