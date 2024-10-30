@@ -1,4 +1,15 @@
 part of 'books_bloc.dart';
 
-@immutable
-sealed class BooksEvent {}
+abstract class BookEvent {}
+
+class SortByAuthor extends BookEvent {}
+
+class SortByTitle extends BookEvent {}
+
+class LoadBooks extends BookEvent {}
+
+class SelectBook extends BookEvent {
+  final Book book;
+
+  SelectBook(this.book);
+}
