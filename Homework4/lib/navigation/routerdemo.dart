@@ -32,7 +32,7 @@ class RouteName {
   static const byAuthorDetail = "byAuthorDetail";
   static const byTitleDetail = "byTitleDetail";
 
-  static final List<Book> bookList = List.generate(20, (index) => Book.createMockBook());
+  static final List<Book> bookList = [];
 
 }
 
