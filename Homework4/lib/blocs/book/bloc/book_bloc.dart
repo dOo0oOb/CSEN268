@@ -11,7 +11,7 @@ class BookBloc extends Bloc<BookEvent, BookState> {
   bool isSortedByAuthor = true;
 
   void init() async {
-    books = List.generate(10, (index) => Book.createMockBook());
+    books = List.generate(8, (index) => Book.createMockBook());
   }
 
   BookBloc() : super(BooksInitial()) {
@@ -35,6 +35,9 @@ class BookBloc extends Bloc<BookEvent, BookState> {
     on<SelectBook>((event, emit) {
       emit(BookSelected(event.book));
     });
+
+      // Trigger initial book loading
+    add(LoadBooks());
   }
 
   void _sortBooks() {

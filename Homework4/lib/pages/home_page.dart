@@ -1,71 +1,35 @@
-import 'package:CSEN268_F24/navigation/router.dart';
-import 'package:CSEN268_F24/pages/sign_in/sign_in_page.dart';
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+// import 'package:flutter/material.dart';
+// import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../navigation/navigator_route.dart';
+// import '../blocs/book/bloc/book_bloc.dart';
+// import 'router_demo_pages/router_auther.dart';
+// import 'router_demo_pages/router_book_detail.dart';
+// import 'router_demo_pages/router_title.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    TextTheme tt = Theme.of(context).textTheme;
-    return Scaffold(
-      appBar: AppBar(title: const Text("Home")),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text("About this page", style: tt.headlineMedium),
-              const Text("This is the home page, or the route '/' in the routes"
-                  " defined in the Material App. The other pages are defined as routes"
-                  " as well. When the respective buttons are pressed, these pages are 'pushed' on "
-                  "the stack. Their scaffold will automatically get a 'back' button that 'pops' the stack."),
-              const SizedBox(height: 10),
-              Text("The Routes", style: tt.headlineMedium),
-              const Text(
-                "Implementation of Repository Provider within a Stateful Widget."
-                " Here we access the repository provider from within the stateful"
-                " widget and directly access repository methods from the UI widget."
-                " This is not the recommended route",
-              ),
-              const SizedBox(height: 10),
-              FilledButton(
-                child: const Text("Login - no Bloc/Cubit"),
-                onPressed: () {
-                  context.goNamed(RouteName.noBloc);
-                },
-              ),
-              const SizedBox(height: 30),
-              const Text(
-                "Implementation of Repository Provider with Cubit",
-              ),
-              const SizedBox(height: 10),
-              FilledButton(
-                child: const Text("Login with Cubit"),
-                onPressed: () {
-                  context.goNamed(RouteName.cubit);
-                },
-              ),
-              const SizedBox(height: 30),
-              const Text(
-                "Implementation of Repository Provider with Bloc",
-              ),
-              const SizedBox(height: 10),
-              FilledButton(
-                child: const Text("Login with Bloc"),
-                onPressed: () {
-                  context.goNamed(RouteName.bloc);
-                },
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
+
+
+// class HomePage extends StatelessWidget {
+//   const HomePage({super.key});
+  
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return BlocBuilder<BookBloc,BookState>(
+//       builder:(context, state) {
+//         switch (state){
+//           case BookSelected _:
+//             return RouterBookDetail(book: (state as BookSelected).book,);
+//           case BooksLoaded booksLoaded:
+//             return booksLoaded.isSortedByAuthor
+//             ? RouterAuthor(bookList: (state as BooksLoaded).books, isSortedByAuthor: (state as BooksLoaded).isSortedByAuthor,)
+//             : RouterTitle(bookList: (state as BooksLoaded).books, isSortedByAuthor: (state as BooksLoaded).isSortedByAuthor,);
+
+//           case BooksInitial _:
+//           default:
+//             return Container();
+//         }
+//       },
+//     );
+//   }
+// }
