@@ -1,6 +1,5 @@
 import 'package:CSEN268_F24/blocs/authentication/bloc/authentication_bloc.dart';
 import 'package:CSEN268_F24/navigation/routerdemo.dart';
-import 'package:CSEN268_F24/pages/home_page.dart';
 import 'package:CSEN268_F24/repositories/authentication/authentication_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

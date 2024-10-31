@@ -14,7 +14,6 @@ class RouterDemoProfile extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            Text("Router Demo Profile"),
             FilledButton(
               child: Text("Logout"),
               onPressed: () {
@@ -22,13 +21,6 @@ class RouterDemoProfile extends StatelessWidget {
                     .add(AuthenticationLogoutEvent());
               },
             ),
-            SizedBox(height: 20),
-            FilledButton(
-              child: Text("Show Detail"),
-              onPressed: () {
-                context.goNamed(RouteName.profileDetail);
-              },
-            )
           ],
         ),
       ),

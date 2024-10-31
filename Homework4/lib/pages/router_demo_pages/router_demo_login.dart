@@ -12,7 +12,6 @@ class RouterDemoLogin extends StatelessWidget {
         body: Center(
           child: Column(
             children: [
-              Text("Router Demo Login"),
               FilledButton(
                 child: Text("Login"),
                 onPressed: () {

@@ -70,8 +70,10 @@
 
 
 
+import 'package:CSEN268_F24/navigation/routerdemo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../blocs/book/bloc/book_bloc.dart';
 
@@ -127,6 +129,12 @@ class RouterAuthor extends StatelessWidget {
                           child: ListTile(
                             title: Text("Title: ${book.title}"),
                             subtitle: Text("Author: ${book.author}"),
+                            onTap: () {
+                              context.pushNamed(
+                                RouteName.byTitleDetail,
+                                extra: book,
+                              );
+                            },
                           ),
                         );
                       },
