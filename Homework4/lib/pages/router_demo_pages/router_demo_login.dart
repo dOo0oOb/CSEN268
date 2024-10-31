@@ -8,17 +8,29 @@ class RouterDemoLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("Login")),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(60.0),
+        child: AppBar(
+          backgroundColor: const Color.fromARGB(255, 251, 239, 255),
+          title: const Text('Login'),
+          centerTitle: true,
+        ),
+      ),
         body: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              FilledButton(
-                child: Text("Login"),
-                onPressed: () {
-                  BlocProvider.of<AuthenticationBloc>(context)
-                      .add(AuthenticationLoginEvent());
-                },
-              )
+              // SizedBox(height: 20), // Add space above the button
+              SizedBox(
+                width: 350, // Set the width of the button
+                child: FilledButton(
+                  child: const Text("Login"),
+                  onPressed: () {
+                    BlocProvider.of<AuthenticationBloc>(context)
+                        .add(AuthenticationLoginEvent());
+                  },
+                ),
+              ),
             ],
           ),
         ));
