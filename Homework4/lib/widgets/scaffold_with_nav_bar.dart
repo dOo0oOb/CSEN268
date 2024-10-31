@@ -1,6 +1,9 @@
 import 'package:CSEN268_F24/navigation/routerdemo.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+
+import '../blocs/book/bloc/book_bloc.dart';
 
 /// Builds the "shell" for the app by building a Scaffold with a
 /// BottomNavigationBar, where [child] is placed in the body of the Scaffold.
@@ -49,10 +52,10 @@ class ScaffoldWithNavBar extends StatelessWidget {
     // if (location.startsWith('/users')) {
     //   return 0;
     // }
-    if (location.startsWith('/author')) {
+    if (location.startsWith('/byAuthor')) {
       return 0;
     }
-    if (location.startsWith('/title')) {
+    if (location.startsWith('/byTitle')) {
       return 1;
     }
     if (location.startsWith('/profile')) {
@@ -67,8 +70,10 @@ class ScaffoldWithNavBar extends StatelessWidget {
       //   GoRouter.of(context).goNamed(RouteName.users);
       case 0:
         GoRouter.of(context).goNamed(RouteName.byAuthor);
+        context.read<BookBloc>().add(SortByAuthor());
       case 1:
         GoRouter.of(context).goNamed(RouteName.byTitle);
+        context.read<BookBloc>().add(SortByTitle());
       case 2:
         GoRouter.of(context).goNamed(RouteName.profile);
     }
