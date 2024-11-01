@@ -1,5 +1,4 @@
 import 'package:CSEN268_F24/blocs/authentication/bloc/authentication_bloc.dart';
-import 'package:CSEN268_F24/pages/home_page.dart';
 import 'package:CSEN268_F24/pages/login/login_page.dart';
 import 'package:CSEN268_F24/pages/router_demo_pages/router_demo_home.dart';
 import 'package:CSEN268_F24/pages/router_demo_pages/router_demo_login.dart';
@@ -69,7 +68,6 @@ GoRouter routerDemo(AuthenticationBloc authenticationBloc) {
           name: RouteName.home,
           builder: (context, state) {
             return const RouterDemoHome();
-            //return const RouterAuthor();
           },
           routes: [
             ShellRoute(
@@ -105,21 +103,7 @@ GoRouter routerDemo(AuthenticationBloc authenticationBloc) {
                 GoRoute(
                   path: 'byAuthor',
                   name: RouteName.byAuthor,
-                  // builder: (BuildContext context, GoRouterState state) {
-                  //   // context.read<BookBloc>().add(SortByAuthor()); // Trigger sort on load
-                  //   // return RouterAuthor(
-                  //   //   bookList: (context.read<BookBloc>().state as BooksLoaded).books, isSortedByAuthor: true,);
-                  //   final booksState = context.watch<BookBloc>().state;
-                  //   if (booksState is BooksLoaded) {
-                  //     return RouterAuthor(
-                  //       bookList: booksState.books,
-                  //       isSortedByAuthor: booksState.isSortedByAuthor,
-                  //     );
-                  //   }
-                  //   return const CircularProgressIndicator();
-                  // },
                   builder: (BuildContext context, GoRouterState state) {
-                    // The RouterAuthor widget will handle state and sorting internally
                     return const RouterAuthor();
                   },
                 routes: [
@@ -136,12 +120,7 @@ GoRouter routerDemo(AuthenticationBloc authenticationBloc) {
                 GoRoute(
                   path: 'byTitle',
                   name: RouteName.byTitle,
-                  // builder: (BuildContext context, GoRouterState state) {
-                  //   final books = context.read<BookBloc>();
-                  //   return RouterTitle(bookList: books.books, isSortedByAuthor: false);
-                  // },
                   builder: (BuildContext context, GoRouterState state) {
-                    // The RouterAuthor widget will handle state and sorting internally
                     return const RouterTitle();
                   },
                 routes: [
@@ -158,7 +137,8 @@ GoRouter routerDemo(AuthenticationBloc authenticationBloc) {
                 ),
               ],
             )
-          ]),
+          ]
+        ),
     ],
   );
 }
