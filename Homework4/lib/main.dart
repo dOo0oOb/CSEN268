@@ -27,7 +27,6 @@ class MyApp extends StatelessWidget {
           ),
           BlocProvider(
             create: (context) => bookBloc..init()..add(LoadBooks()),
-            // child: const HomePage(), // HomePage
           ),
         ],
         child: MaterialApp.router(

@@ -70,10 +70,8 @@ class ScaffoldWithNavBar extends StatelessWidget {
       //   GoRouter.of(context).goNamed(RouteName.users);
       case 0:
         GoRouter.of(context).goNamed(RouteName.byAuthor);
-        context.read<BookBloc>().add(SortByAuthor());
       case 1:
         GoRouter.of(context).goNamed(RouteName.byTitle);
-        context.read<BookBloc>().add(SortByTitle());
       case 2:
         GoRouter.of(context).goNamed(RouteName.profile);
     }

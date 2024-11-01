@@ -9,11 +9,33 @@ class RouterBookDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Book")),
-      body: Center(
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(60.0),
+        child: AppBar(
+          backgroundColor: const Color.fromARGB(255, 251, 239, 255),
+          title: Text("Book"),
+          centerTitle: true,
+            actions: <Widget>[
+              IconButton(
+                icon: const Icon(Icons.account_circle),
+                onPressed: () {},
+              ),
+            ],
+          ),
+            ),
+            
+      body: SizedBox(
         child: Column(
           children: [
-            Text("Detail of the Book"),
+            Padding(
+              padding: const EdgeInsets.all(50.0),
+              child: Text(
+                "Detail of the Book",
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                  color: Colors.grey,
+                ),
+              ),
+            ),
           ],
         ),
       ),

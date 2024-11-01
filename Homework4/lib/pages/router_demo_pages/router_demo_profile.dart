@@ -33,7 +33,7 @@ class RouterDemoProfile extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-                width: 350, // Set the width of the button
+                width: 350,
                 child: FilledButton(
                 child: Text("Logout"),
                 onPressed: () {
