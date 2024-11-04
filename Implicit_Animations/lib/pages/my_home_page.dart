@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../widgets/padded_text.dart'; // Keep this import if you're using PaddedText elsewhere
 
-import '../widgets/AnimatedRotation.dart'; // Import the RotatingLogo widget file
+import '../widgets/AnimatedSwitcherExample.dart';
+import '../widgets/padded_text.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -12,23 +12,29 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text("Implicit Animation"),
+        title: Text(widget.title),
       ),
-      body: Center(
+      body: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              "Rotation", // Title in the body
-              style: Theme.of(context).textTheme.headlineMedium,
+            SizedBox(
+              height: 200, // Give a fixed height or wrap with Flexible
+              child: AnimatedSwitcherExample(),
             ),
-            const SizedBox(height: 20), // Spacer between title and logo
-            const RotatingLogo(), // Rotating logo widget
           ],
         ),
       ),
