@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/AnimatedSwitcherExample.dart';
 import '../widgets/padded_text.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -26,28 +27,16 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Center(
+      body: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const PaddedText(
-              text: "Welcome to Lecture 4",
-              padding: 40,
-            ),
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+          children: [
+            SizedBox(
+              height: 200, // Give a fixed height or wrap with Flexible
+              child: AnimatedSwitcherExample(),
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }
