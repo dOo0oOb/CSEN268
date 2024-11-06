@@ -8,11 +8,11 @@ class Rotation extends StatefulWidget {
 }
 
 class RotationState extends State<Rotation> {
-  //Track rotation
+  // Track rotation
   double turns = 0.0;
 
   void _changeRotation() {
-    //Rotate by 90 degrees
+    // Rotate by 90 degrees
     setState(() => turns += 1.0 / 4.0);
   }
 
@@ -30,7 +30,11 @@ class RotationState extends State<Rotation> {
           child: AnimatedRotation(
             turns: turns,
             duration: const Duration(seconds: 1),
-            child: const FlutterLogo(),
+            child: const SizedBox(
+              width: 50, // Adjust the width
+              height: 50, // Adjust the height
+              child: FlutterLogo(),
+            ),
           ),
         ),
       ],

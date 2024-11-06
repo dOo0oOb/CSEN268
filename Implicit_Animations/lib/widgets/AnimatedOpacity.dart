@@ -38,7 +38,7 @@ class _CombinedOpacityExampleState extends State<CombinedOpacityExample> {
         AnimatedOpacity(
           opacity: isVisible ? 1.0 : 0.0,
           duration: const Duration(seconds: 3),
-          child: isVisible ? const FlutterLogo(size: 100) : const Text('Hello World', style: TextStyle(fontSize: 24)),
+          child: isVisible ? const FlutterLogo(size: 50) : const Text('Hello World', style: TextStyle(fontSize: 24)),
         ),
         const SizedBox(height: 20),
         ElevatedButton(
