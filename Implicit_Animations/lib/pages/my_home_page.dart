@@ -8,6 +8,7 @@ import '../widgets/AnimatedRotation.dart';
 import '../widgets/AnimatedContainer.dart';
 import '../widgets/AnimatedOpacity.dart';
 import '../widgets/AnimatedAlign.dart';
+import '../widgets/AnimatedCrossFade.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -56,6 +57,10 @@ class _MyHomePageState extends State<MyHomePage> {
             SizedBox(
               height: 200,
               child: AnimatedAlignExampleApp(),
+            ),
+            SizedBox(
+              height: 200,
+              child: CrossFadeExampleApp(),
             ),
           ],
         ),
