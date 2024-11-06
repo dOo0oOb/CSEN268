@@ -1,17 +1,33 @@
 import 'package:flutter/material.dart';
 
-class LogoFade extends StatefulWidget {
-  const LogoFade({super.key});
+class CombinedOpacityExampleApp extends StatelessWidget {
+  const CombinedOpacityExampleApp({super.key});
 
   @override
-  State<LogoFade> createState() => LogoFadeState();
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: const Text('Combined Opacity Example')),
+        body: const CombinedOpacityExample(),
+      ),
+    );
+  }
 }
 
-class LogoFadeState extends State<LogoFade> {
-  double opacityLevel = 1.0;
+class CombinedOpacityExample extends StatefulWidget {
+  const CombinedOpacityExample({super.key});
 
-  void _changeOpacity() {
-    setState(() => opacityLevel = opacityLevel == 0 ? 1.0 : 0.0);
+  @override
+  State<CombinedOpacityExample> createState() => _CombinedOpacityExampleState();
+}
+
+class _CombinedOpacityExampleState extends State<CombinedOpacityExample> {
+  bool isVisible = true;
+
+  void _toggleOpacity() {
+    setState(() {
+      isVisible = !isVisible;
+    });
   }
 
   @override
@@ -20,13 +36,14 @@ class LogoFadeState extends State<LogoFade> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         AnimatedOpacity(
-          opacity: opacityLevel,
+          opacity: isVisible ? 1.0 : 0.0,
           duration: const Duration(seconds: 3),
-          child: const FlutterLogo(),
+          child: isVisible ? const FlutterLogo(size: 100) : const Text('Hello World', style: TextStyle(fontSize: 24)),
         ),
+        const SizedBox(height: 20),
         ElevatedButton(
-          onPressed: _changeOpacity,
-          child: const Text('Fade Logo'),
+          onPressed: _toggleOpacity,
+          child: const Text('Toggle Opacity'),
         ),
       ],
     );
