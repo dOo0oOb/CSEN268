@@ -2,12 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../widgets/AnimatedSwitcherExample.dart';
 import '../widgets/AnimatedAlign.dart';
-
 import '../widgets/padded_text.dart';
 import '../widgets/AnimatedRotation.dart';
 import '../widgets/AnimatedContainer.dart';
 import '../widgets/AnimatedOpacity.dart';
-import '../widgets/AnimatedAlign.dart';
 import '../widgets/AnimatedCrossFade.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -34,35 +32,37 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(
-              height: 200, // Give a fixed height or wrap with Flexible
-              child: AnimatedSwitcherExample(),
-            ),
-            SizedBox(
-              height: 200,
-              child: Rotation(),
-            ),
-            SizedBox(
-              height: 200,
-              child: AnimatedContainerExampleApp(),
-            ),
-            SizedBox(
-              height: 200,
-              child: CombinedOpacityExampleApp(),
-            ),
-            SizedBox(
-              height: 200,
-              child: AnimatedAlignExampleApp(),
-            ),
-            SizedBox(
-              height: 200,
-              child: CrossFadeExampleApp(),
-            ),
-          ],
+      body: const SingleChildScrollView(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: 200, // Fixed height for each widget section
+                child: AnimatedSwitcherExample(),
+              ),
+              SizedBox(
+                height: 200,
+                child: Rotation(),
+              ),
+              SizedBox(
+                height: 200,
+                child: AnimatedContainerExampleApp(),
+              ),
+              SizedBox(
+                height: 200,
+                child: CombinedOpacityExampleApp(),
+              ),
+              SizedBox(
+                height: 200,
+                child: AnimatedAlignExampleApp(),
+              ),
+              SizedBox(
+                height: 200,
+                child: CrossFadeExampleApp(),
+              ),
+            ],
+          ),
         ),
       ),
     );
