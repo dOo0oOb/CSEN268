@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
 
+class CrossFade extends StatefulWidget {
+  const CrossFade({super.key});
+
+  @override
+  State<CrossFade> createState() => CrossFadeState();
+}
+
 AnimatedCrossFade( 
   duration: Duration(seconds: 1), 
   firstChild: Container(color: Colors.red, height: 100.0), 
