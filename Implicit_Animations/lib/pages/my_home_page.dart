@@ -4,6 +4,7 @@ import '../widgets/AnimatedSwitcherExample.dart';
 import '../widgets/AnimatedAlign.dart';
 
 import '../widgets/padded_text.dart';
+import '../widgets/AnimatedRotation.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -37,6 +38,10 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 200, // Give a fixed height or wrap with Flexible
               child: AnimatedSwitcherExample(),
             ),
+            SizedBox(
+              height: 200,
+              child: Rotation(),
+            )
           ],
         ),
       ),
