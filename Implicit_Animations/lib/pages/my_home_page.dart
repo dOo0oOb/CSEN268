@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/AnimatedSwitcherExample.dart';
+import '../widgets/AnimatedAlign.dart';
+
 import '../widgets/padded_text.dart';
 
 class MyHomePage extends StatefulWidget {
