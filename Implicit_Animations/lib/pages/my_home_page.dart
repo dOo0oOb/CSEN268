@@ -5,6 +5,9 @@ import '../widgets/AnimatedAlign.dart';
 
 import '../widgets/padded_text.dart';
 import '../widgets/AnimatedRotation.dart';
+import '../widgets/AnimatedContainer.dart';
+import '../widgets/AnimatedOpacity.dart';
+import '../widgets/AnimatedAlign.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -41,7 +44,19 @@ class _MyHomePageState extends State<MyHomePage> {
             SizedBox(
               height: 200,
               child: Rotation(),
-            )
+            ),
+            SizedBox(
+              height: 200,
+              child: AnimatedContainerExampleApp(),
+            ),
+            SizedBox(
+              height: 200,
+              child: LogoFade(),
+            ),
+            SizedBox(
+              height: 200,
+              child: AnimatedAlignExampleApp(),
+            ),
           ],
         ),
       ),

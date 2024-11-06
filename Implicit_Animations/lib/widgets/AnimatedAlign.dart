@@ -1,14 +1,52 @@
 import 'package:flutter/material.dart';
 
-class Align extends StatefulWidget {
-  const Align({super.key});
+class AnimatedAlignExampleApp extends StatelessWidget {
+  const AnimatedAlignExampleApp({super.key});
 
   @override
-  State<Align> createState() => AlignState();
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: const Text('Combined AnimatedAlign Example')),
+        body: const AnimatedAlignExample(),
+      ),
+    );
+  }
 }
 
-AnimatedAlign( 
-  duration: Duration(seconds: 1), 
-  alignment: _isTopLeft ? Alignment.topLeft : Alignment.bottomRight, 
-  child: FlutterLogo(), 
-)
+class AnimatedAlignExample extends StatefulWidget {
+  const AnimatedAlignExample({super.key});
+
+  @override
+  State<AnimatedAlignExample> createState() => _AnimatedAlignExampleState();
+}
+
+class _AnimatedAlignExampleState extends State<AnimatedAlignExample> {
+  bool isTopLeft = false;
+
+  void _toggleAlignment() {
+    setState(() {
+      isTopLeft = !isTopLeft;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: _toggleAlignment,
+      child: Center(
+        child: Container(
+          width: 250.0,
+          height: 250.0,
+          color: Colors.red,
+          child: AnimatedAlign(
+            alignment: isTopLeft ? Alignment.topLeft : Alignment.bottomRight,
+            duration: const Duration(seconds: 1),
+            curve: Curves.fastOutSlowIn,
+            child: const FlutterLogo(size: 50.0),
+          ),
+        ),
+      ),
+    );
+  }
+}
