@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../widgets/AnimatedAlignExample.dart';
@@ -8,7 +7,6 @@ import '../widgets/AnimatedOpacityExample.dart';
 import '../widgets/AnimatedRotationExample.dart';
 import '../widgets/AnimatedSwitcherExample.dart';
 import '../widgets/HeroExample.dart';
-
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key, required this.title,}) : super(key: key);
