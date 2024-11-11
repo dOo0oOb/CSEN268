@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
 import '../widgets/AnimatedAlignExample.dart';
@@ -7,15 +6,11 @@ import '../widgets/AnimatedCrossFadeExample.dart';
 import '../widgets/AnimatedOpacityExample.dart';
 import '../widgets/AnimatedRotationExample.dart';
 import '../widgets/AnimatedSwitcherExample.dart';
-import '../widgets/AnimatedAlign.dart';
+import '../widgets/HeroExample.dart';
 
-import '../widgets/padded_text.dart';
-import '../widgets/AnimatedRotation.dart';
-import '../widgets/AnimatedContainer.dart';
-import '../widgets/AnimatedOpacity.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class HomePage extends StatelessWidget {
+  HomePage({Key? key, required this.title,}) : super(key: key);
   final String title;
 
   final List<Widget> animationExamples = [
@@ -35,32 +30,27 @@ class MyHomePage extends StatefulWidget {
         title: const Text('Implicit Animation Examples'),
         centerTitle: true,
       ),
-      body: const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(
-              height: 200, // Give a fixed height or wrap with Flexible
-              child: AnimatedSwitcherExample(),
+      body: ListView.builder(
+        padding: const EdgeInsets.all(8.0), // Add padding around the ListView
+        itemCount: animationExamples.length,
+        itemBuilder: (context, index) {
+          final widgetName = animationExamples[index].runtimeType.toString();
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 4.0), // Add padding between each card
+            child: Card(
+              color: const Color.fromARGB(255, 179, 206, 234),
+              child: ListTile(
+                title: Text(widgetName),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => animationExamples[index]),
+                  );
+                },
+              ),
             ),
-            SizedBox(
-              height: 200,
-              child: Rotation(),
-            ),
-            SizedBox(
-              height: 200,
-              child: AnimatedContainerExampleApp(),
-            ),
-            SizedBox(
-              height: 200,
-              child: CombinedOpacityExampleApp(),
-            ),
-            SizedBox(
-              height: 200,
-              child: AnimatedAlignExampleApp(),
-            ),
-          ],
-        ),
+          );
+        },
       ),
     );
   }
