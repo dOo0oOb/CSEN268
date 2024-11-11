@@ -19,8 +19,8 @@ class ArticlesLoadedView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: MainDrawer(),
-      appBar: AppBar(title: Text("Articles"), actions: [
-        TextButton(child: Text("Add"), onPressed: addArticleCallback)
+      appBar: AppBar(title: const Text("Articles"), actions: [
+        TextButton(onPressed: addArticleCallback, child: Text("Add"))
       ]),
       body: ListView(
           children: articles.map((article) {
@@ -32,24 +32,24 @@ class ArticlesLoadedView extends StatelessWidget {
               title: Text(article.title),
               subtitle: Text(article.author),
               trailing: IconButton(
-                icon: Icon(Icons.delete),
+                icon: const Icon(Icons.delete),
                 onPressed: () async {
                   bool? confirmDelete = await showDialog<bool>(
                     context: context,
                     builder: (context) {
                       return AlertDialog(
-                          title: Text("Confirm Deletion"),
-                          content: Text(
+                          title: const Text("Confirm Deletion"),
+                          content: const Text(
                               "Are you sure you want to delete this article permanently?"),
                           actions: [
                             FilledButton.tonal(
-                              child: Text("Yes"),
+                              child: const Text("Yes"),
                               onPressed: () {
                                 Navigator.of(context).pop(true);
                               },
                             ),
                             FilledButton(
-                              child: Text("Cancel"),
+                              child: const Text("Cancel"),
                               onPressed: () {
                                 Navigator.of(context).pop(false);
                               },

@@ -9,13 +9,13 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Home"),
+          title: const Text("Home"),
         ),
         body: SingleChildScrollView(
             child: Column(children: [
           Container(
               child: FilledButton(
-            child: Text("Sign Out"),
+            child: const Text("Sign Out"),
             onPressed: () {
               BlocProvider.of<AuthenticationBloc>(context)
                   .add(AuthenticationSignOutEvent());

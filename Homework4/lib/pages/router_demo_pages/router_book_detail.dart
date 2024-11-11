@@ -13,7 +13,7 @@ class RouterBookDetail extends StatelessWidget {
         preferredSize: const Size.fromHeight(60.0),
         child: AppBar(
           backgroundColor: const Color.fromARGB(255, 251, 239, 255),
-          title: Text("Book"),
+          title: const Text("Book"),
           centerTitle: true,
             actions: <Widget>[
               IconButton(

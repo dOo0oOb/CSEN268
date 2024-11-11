@@ -84,7 +84,7 @@ class _AnimatedSwitcherExampleState extends State<AnimatedSwitcherExample> {
                 },
                 child: Text(
                   '$_count',
-                  key: ValueKey<int>(0),
+                  key: const ValueKey<int>(0),
                   style: Theme.of(context).textTheme.displayMedium,
                 ),
               ),

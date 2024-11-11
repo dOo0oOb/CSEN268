@@ -13,7 +13,6 @@ import '../widgets/padded_text.dart';
 import '../widgets/AnimatedRotation.dart';
 import '../widgets/AnimatedContainer.dart';
 import '../widgets/AnimatedOpacity.dart';
-import '../widgets/AnimatedAlign.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});

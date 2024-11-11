@@ -20,7 +20,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Email Verification"),
+        title: const Text("Email Verification"),
       ),
       body: Center(
         child: Padding(
@@ -31,26 +31,26 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
             children: [
               Text("Email not verified",
                   style: Theme.of(context).textTheme.headlineMedium),
-              SizedBox(height: 10),
-              Text(
+              const SizedBox(height: 10),
+              const Text(
                   "Your email is not verified. Please click below to receive an "
                   "email at your email address."),
-              SizedBox(height: 10),
-              Text("Note that you will be logged out and redirected "
+              const SizedBox(height: 10),
+              const Text("Note that you will be logged out and redirected "
                   "to Sign In for the changes to take effect."),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               AnimatedCrossFade(
                 crossFadeState:
                     busy ? CrossFadeState.showFirst : CrossFadeState.showSecond,
-                duration: Duration(milliseconds: 300),
+                duration: const Duration(milliseconds: 300),
                 firstChild: Container(
                   alignment: Alignment.center,
-                  margin: EdgeInsets.all(20),
-                  child: CircularProgressIndicator(),
+                  margin: const EdgeInsets.all(20),
+                  child: const CircularProgressIndicator(),
                 ),
                 secondChild: Container(),
               ),
-              Container(
+              SizedBox(
                 width: double.infinity,
                 child: FilledButton(
                     onPressed: busy
@@ -61,18 +61,18 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                               busy = true;
                             });
                           },
-                    child: Text("Verify Email")),
+                    child: const Text("Verify Email")),
               ),
               Container(
                 width: double.infinity,
-                padding: EdgeInsets.only(top: 10),
+                padding: const EdgeInsets.only(top: 10),
                 child: FilledButton.tonal(
                     onPressed: busy
                         ? null
                         : () {
                             BlocProvider.of<AuthenticationBloc>(context).add(
                                 AuthenticationEmailVerificationCancelRequest());
-                            Future.delayed(Duration(milliseconds: 10), () {
+                            Future.delayed(const Duration(milliseconds: 10), () {
                               GoRouter.of(context)
                                   .goNamed(IndexedRoutes().routes[0].name);
                             });
@@ -80,7 +80,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                               busy = true;
                             });
                           },
-                    child: Text("I'll do it later")),
+                    child: const Text("I'll do it later")),
               )
             ],
           ),

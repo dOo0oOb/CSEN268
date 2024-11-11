@@ -14,17 +14,17 @@ class ArticlesAddArticleView extends StatefulWidget {
 
 class _ArticlesAddArticleViewState extends State<ArticlesAddArticleView> {
   Map<String, dynamic> data = {'title': null, 'author': null, 'text': null};
-  GlobalKey<FormState> _formKey = GlobalKey();
+  final GlobalKey<FormState> _formKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: MainDrawer(),
       appBar: AppBar(
-        title: Text("Articles"),
+        title: const Text("Articles"),
         actions: [
           IconButton(
-            icon: Icon(Icons.close),
+            icon: const Icon(Icons.close),
             onPressed: widget.close,
           ),
         ],
@@ -38,9 +38,9 @@ class _ArticlesAddArticleViewState extends State<ArticlesAddArticleView> {
             children: [
               Text("Add Article",
                   style: Theme.of(context).textTheme.headlineMedium),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: "Title",
                 ),
                 onSaved: (val) {
@@ -53,9 +53,9 @@ class _ArticlesAddArticleViewState extends State<ArticlesAddArticleView> {
                   return null;
                 },
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: "Author",
                 ),
                 onSaved: (val) {
@@ -68,9 +68,9 @@ class _ArticlesAddArticleViewState extends State<ArticlesAddArticleView> {
                   return null;
                 },
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: "Text",
                 ),
                 onSaved: (val) {
@@ -85,11 +85,11 @@ class _ArticlesAddArticleViewState extends State<ArticlesAddArticleView> {
                   return null;
                 },
               ),
-              SizedBox(height: 10),
-              Container(
+              const SizedBox(height: 10),
+              SizedBox(
                 width: double.infinity,
                 child: FilledButton(
-                  child: Text("Save"),
+                  child: const Text("Save"),
                   onPressed: () {
                     if (_formKey.currentState?.validate() ?? false) {
                       _formKey.currentState?.save();

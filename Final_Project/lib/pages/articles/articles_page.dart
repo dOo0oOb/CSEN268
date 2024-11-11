@@ -37,7 +37,7 @@ class ArticlesPage extends StatelessWidget {
               );
             case ArticlesInitial _:
             default:
-              return ArticlesLoadingView();
+              return const ArticlesLoadingView();
           }
         },
       ),

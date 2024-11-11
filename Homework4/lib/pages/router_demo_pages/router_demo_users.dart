@@ -8,13 +8,13 @@ class RouterDemoUsers extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("Users")),
+        appBar: AppBar(title: const Text("Users")),
         body: Center(
             child: Column(
           children: [
-            Text("Router Demo Users"),
+            const Text("Router Demo Users"),
             FilledButton(
-              child: Text("Logout"),
+              child: const Text("Logout"),
               onPressed: () {
                 BlocProvider.of<AuthenticationBloc>(context)
                     .add(AuthenticationLogoutEvent());

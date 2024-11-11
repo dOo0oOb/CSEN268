@@ -9,10 +9,10 @@ class SignInPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Sign In"),
+        title: const Text("Sign In"),
       ),
       body: SignInScreen(
-        headerBuilder: (context, constraints, shrinkOffset) => SignInHeader(),
+        headerBuilder: (context, constraints, shrinkOffset) => const SignInHeader(),
         providers: [EmailAuthProvider()],
         actions: [
           AuthStateChangeAction<SignedIn>((context, state) {}),

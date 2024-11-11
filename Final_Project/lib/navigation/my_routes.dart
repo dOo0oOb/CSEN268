@@ -19,25 +19,25 @@ class IndexedRoutes {
         path: 'images',
         label: 'Images',
         icon: Icons.image,
-        child: GenericPage(title: "Images")),
+        child: const GenericPage(title: "Images")),
     MyRoute(
         name: 'articles',
         path: 'articles',
         label: 'Articles',
         icon: Icons.text_snippet,
-        child: ArticlesPage()),
+        child: const ArticlesPage()),
     MyRoute(
         name: 'chat',
         path: 'chat',
         label: 'Chat',
         icon: Icons.chat,
-        child: GenericPage(title: "Chat")),
+        child: const GenericPage(title: "Chat")),
     MyRoute(
         name: 'profile',
         path: 'profile',
         label: 'Profile',
         icon: Icons.person,
-        child: ProfilePage()),
+        child: const ProfilePage()),
   ];
 
   int getIndex(String path) {

@@ -17,8 +17,8 @@ class EmailVerificationButton extends StatelessWidget {
               onPressed: () {
                 GoRouter.of(context).goNamed(MyRoutes.verifyEmail.name);
               },
-              icon: Icon(Icons.verified_outlined),
-              label: Text("Verify Email"));
+              icon: const Icon(Icons.verified_outlined),
+              label: const Text("Verify Email"));
         } else {
           return Container();
         }

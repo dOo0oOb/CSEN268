@@ -23,7 +23,7 @@ void main() async {
   FirebaseUIAuth.configureProviders([
     EmailAuthProvider(),
   ]);
-  Bloc.observer = AppBlocObserver();
+  Bloc.observer = const AppBlocObserver();
   runApp(MyApp());
 }
 

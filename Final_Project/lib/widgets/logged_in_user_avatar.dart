@@ -53,8 +53,8 @@ class LoggedInUserAvatar extends StatelessWidget {
                                 maxLines: 1, overflow: TextOverflow.clip),
                           ),
                           if (state.user.emailVerified)
-                            Padding(
-                              padding: const EdgeInsets.only(left: 5.0),
+                            const Padding(
+                              padding: EdgeInsets.only(left: 5.0),
                               child: Icon(
                                 Icons.verified_user_outlined,
                               ),

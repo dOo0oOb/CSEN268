@@ -18,7 +18,7 @@ class UserCard extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               width: double.infinity,
               alignment: Alignment.center,
               child: CircleAvatar(
