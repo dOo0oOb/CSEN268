@@ -33,7 +33,7 @@ class Mock {
   }
 
   static String uid() {
-    return UuidV4().generate();
+    return const UuidV4().generate();
   }
 
   static String imageUrl({String? firstName, String? lastName}) {

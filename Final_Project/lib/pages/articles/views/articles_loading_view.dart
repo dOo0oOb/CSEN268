@@ -8,7 +8,7 @@ class ArticlesLoadingView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         drawer: MainDrawer(),
-        appBar: AppBar(title: Text("Articles")),
-        body: Center(child: CircularProgressIndicator()));
+        appBar: AppBar(title: const Text("Articles")),
+        body: const Center(child: CircularProgressIndicator()));
   }
 }

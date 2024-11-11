@@ -9,7 +9,7 @@ class GenericPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(title), actions: [
+      appBar: AppBar(title: Text(title), actions: const [
         LoggedInUserAvatar(
           userAvatarSize: UserAvatarSize.small,
         )

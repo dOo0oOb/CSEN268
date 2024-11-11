@@ -9,11 +9,11 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         drawer: MainDrawer(),
-        appBar: AppBar(title: Text("Profile"), actions: [
+        appBar: AppBar(title: const Text("Profile"), actions: const [
           LoggedInUserAvatar(
             userAvatarSize: UserAvatarSize.small,
           )
         ]),
-        body: Center(child: Text("Profile")));
+        body: const Center(child: Text("Profile")));
   }
 }

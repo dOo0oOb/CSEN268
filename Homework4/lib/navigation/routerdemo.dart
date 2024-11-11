@@ -1,19 +1,14 @@
 import 'package:CSEN268_F24/blocs/authentication/bloc/authentication_bloc.dart';
-import 'package:CSEN268_F24/pages/login/login_page.dart';
 import 'package:CSEN268_F24/pages/router_demo_pages/router_demo_home.dart';
 import 'package:CSEN268_F24/pages/router_demo_pages/router_demo_login.dart';
 import 'package:CSEN268_F24/pages/router_demo_pages/router_demo_profile.dart';
 import 'package:CSEN268_F24/pages/router_demo_pages/router_demo_profile_detail.dart';
 import 'package:CSEN268_F24/pages/router_demo_pages/router_demo_users.dart';
-import 'package:CSEN268_F24/pages/sign_in/sign_in_page.dart';
-import 'package:CSEN268_F24/pages/stateful_login_page.dart';
 import 'package:CSEN268_F24/utilities/stream_to_listenable.dart';
 import 'package:CSEN268_F24/widgets/scaffold_with_nav_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-import '../blocs/book/bloc/book_bloc.dart';
 import '../model/book.dart';
 import '../pages/router_demo_pages/router_auther.dart';
 import '../pages/router_demo_pages/router_book_detail.dart';

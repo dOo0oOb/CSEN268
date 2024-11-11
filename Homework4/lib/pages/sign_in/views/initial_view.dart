@@ -70,7 +70,7 @@ class _InitialViewState extends State<InitialView> {
                       },
                     ),
                     const SizedBox(height: 20),
-                    Container(
+                    SizedBox(
                       width: double.maxFinite,
                       child: FilledButton(
                         onPressed: () {

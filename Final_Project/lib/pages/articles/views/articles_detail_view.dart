@@ -12,9 +12,9 @@ class ArticlesDetailView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         drawer: MainDrawer(),
-        appBar: AppBar(title: Text("Article"), actions: [
+        appBar: AppBar(title: const Text("Article"), actions: [
           IconButton(
-            icon: Icon(Icons.close),
+            icon: const Icon(Icons.close),
             onPressed: close,
           )
         ]),
@@ -25,10 +25,10 @@ class ArticlesDetailView extends StatelessWidget {
               children: [
                 Text(article.title,
                     style: Theme.of(context).textTheme.headlineMedium),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Text(article.author,
                     style: Theme.of(context).textTheme.titleMedium),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Text(article.text,
                     style: Theme.of(context).textTheme.bodyMedium),
               ],

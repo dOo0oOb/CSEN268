@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MainDrawer extends StatelessWidget {
-  MainDrawer({super.key, this.navigationItems});
+  const MainDrawer({super.key, this.navigationItems});
   final List<Widget>? navigationItems;
 
   @override
@@ -20,42 +20,42 @@ class MainDrawer extends StatelessWidget {
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             DrawerHeader(
-              child: Container(
+              child: SizedBox(
                 width: double.infinity,
                 height: 400,
-                child: LoggedInUserAvatar(
+                child: const LoggedInUserAvatar(
                   userAvatarSize: UserAvatarSize.large,
                 ),
               ),
             ),
             if (navigationItems != null) ...navigationItems!,
             TextButton.icon(
-                icon: Icon(Icons.question_mark),
-                label: Text("Other"),
+                icon: const Icon(Icons.question_mark),
+                label: const Text("Other"),
                 onPressed: () {}),
             TextButton.icon(
-                icon: Icon(Icons.question_mark),
-                label: Text("Other"),
+                icon: const Icon(Icons.question_mark),
+                label: const Text("Other"),
                 onPressed: () {}),
             TextButton.icon(
-                icon: Icon(Icons.question_mark),
-                label: Text("Other"),
+                icon: const Icon(Icons.question_mark),
+                label: const Text("Other"),
                 onPressed: () {}),
-            EmailVerificationButton(),
+            const EmailVerificationButton(),
             TextButton.icon(
-                icon: Icon(Icons.logout),
-                label: Text("Sign Out"),
+                icon: const Icon(Icons.logout),
+                label: const Text("Sign Out"),
                 onPressed: () {
                   BlocProvider.of<AuthenticationBloc>(context)
                       .add(AuthenticationSignOutEvent());
                 }),
-            Divider(),
+            const Divider(),
             Padding(
               padding: const EdgeInsets.only(bottom: 5),
               child: Text("Display settings",
                   style: Theme.of(context).textTheme.labelMedium),
             ),
-            BrightnessSelector(),
+            const BrightnessSelector(),
           ]),
         )),
       ),

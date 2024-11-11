@@ -14,13 +14,13 @@ class BrightnessSelector extends StatelessWidget {
             child: Row(mainAxisSize: MainAxisSize.min, children: [
           state.themeMode == ThemeMode.light
               ? IconButton.filled(
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.light_mode,
                   ),
                   onPressed: () {},
                 )
               : IconButton.filledTonal(
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.light_mode,
                   ),
                   onPressed: () {
@@ -30,16 +30,16 @@ class BrightnessSelector extends StatelessWidget {
 
                   // isSelected: true,
                 ),
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
           state.themeMode == ThemeMode.dark
               ? IconButton.filled(
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.dark_mode,
                   ),
                   onPressed: () {},
                 )
               : IconButton.filledTonal(
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.dark_mode,
                   ),
                   onPressed: () {
@@ -49,16 +49,16 @@ class BrightnessSelector extends StatelessWidget {
 
                   // isSelected: true,
                 ),
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
           state.themeMode == ThemeMode.system
               ? IconButton.filled(
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.smartphone,
                   ),
                   onPressed: () {},
                 )
               : IconButton.filledTonal(
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.smartphone,
                   ),
                   onPressed: () {

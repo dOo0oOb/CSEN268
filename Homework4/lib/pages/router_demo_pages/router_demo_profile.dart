@@ -35,7 +35,7 @@ class RouterDemoProfile extends StatelessWidget {
             SizedBox(
                 width: 350,
                 child: FilledButton(
-                child: Text("Logout"),
+                child: const Text("Logout"),
                 onPressed: () {
                   BlocProvider.of<AuthenticationBloc>(context)
                       .add(AuthenticationLogoutEvent());
