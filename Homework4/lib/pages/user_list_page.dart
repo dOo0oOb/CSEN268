@@ -2,7 +2,6 @@ import 'package:CSEN268_F24/widgets/user_list_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_lorem/flutter_lorem.dart';
 import 'package:uuid/v4.dart';
-import 'dart:math' as math;
 
 import '../model/user.dart';
 import '../widgets/user_card.dart';
@@ -21,7 +20,7 @@ class UserListPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
+            SizedBox(
               height: 250,
               child: ListView.separated(
                 scrollDirection: Axis.horizontal,
@@ -32,12 +31,12 @@ class UserListPage extends StatelessWidget {
                   );
                 },
                 separatorBuilder: (context, index) {
-                  return Divider();
+                  return const Divider();
                 },
                 itemCount: userList.length,
               ),
             ),
-            Container(
+            SizedBox(
               height: 700,
               child: ListView.separated(
                 // scrollDirection: Axis.vertical,
@@ -45,7 +44,7 @@ class UserListPage extends StatelessWidget {
                   return UserListTile(user: userList[index]);
                 },
                 separatorBuilder: (context, index) {
-                  return Divider();
+                  return const Divider();
                 },
                 itemCount: userList.length,
               ),

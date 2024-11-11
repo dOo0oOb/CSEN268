@@ -8,8 +8,8 @@ class RouterDemoProfileDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Profile")),
-      body: Center(
+      appBar: AppBar(title: const Text("Profile")),
+      body: const Center(
         child: Column(
           children: [
             Text("Router Demo Profile Detail Page"),

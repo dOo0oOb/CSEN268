@@ -15,9 +15,9 @@ class HomePage extends StatelessWidget {
       builder:(context, state) {
         switch (state){
           case BookSelected _:
-            return DetailView(book: (state as BookSelected).book,);
+            return DetailView(book: (state).book,);
           case BooksLoaded _:
-            return BookListView(bookList: (state as BooksLoaded).books, isSortedByAuthor: (state as BooksLoaded).isSortedByAuthor,);
+            return BookListView(bookList: (state).books, isSortedByAuthor: (state).isSortedByAuthor,);
           case BooksInitial _:
           default:
             return Container();
