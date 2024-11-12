@@ -58,11 +58,11 @@ class _AnimatedSwitcherExampleState extends State<AnimatedSwitcherExample> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'duration',
+                'duration > timer',
                 style: Theme.of(context).textTheme.headlineSmall,
               ),
               AnimatedSwitcher(
-                duration: const Duration(milliseconds: 10000),
+                duration: const Duration(milliseconds: 5000),
                 transitionBuilder: (Widget child, Animation<double> animation) {
                   return FadeTransition(opacity: animation, child: child);
                 },
@@ -97,6 +97,28 @@ class _AnimatedSwitcherExampleState extends State<AnimatedSwitcherExample> {
                 duration: const Duration(milliseconds: 500),
                 transitionBuilder: (Widget child, Animation<double> animation) {
                   return ScaleTransition(scale: animation, child: child);
+                },
+                child: Text(
+                  '$_count',
+                  key: ValueKey<int>(_count),
+                  style: Theme.of(context).textTheme.displayMedium,
+                ),
+              ),
+              const SizedBox(height: 20),
+              Text(
+                'unique key with curve',
+                style: Theme.of(context).textTheme.headlineSmall,
+              ),
+              AnimatedSwitcher(
+                duration: const Duration(milliseconds: 500),
+                transitionBuilder: (Widget child, Animation<double> animation) {
+                  return ScaleTransition(
+                    scale: CurvedAnimation(
+                      parent: animation,
+                      curve: Curves.bounceInOut,
+                    ),
+                    child: child
+                    );
                 },
                 child: Text(
                   '$_count',

@@ -31,12 +31,12 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
       ),
       body: ListView.builder(
-        padding: const EdgeInsets.all(8.0), // Add padding around the ListView
+        padding: const EdgeInsets.all(8.0),
         itemCount: animationExamples.length,
         itemBuilder: (context, index) {
           final widgetName = animationExamples[index].runtimeType.toString();
           return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 4.0), // Add padding between each card
+            padding: const EdgeInsets.symmetric(vertical: 4.0),
             child: Card(
               color: const Color.fromARGB(255, 179, 206, 234),
               child: ListTile(
