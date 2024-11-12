@@ -68,20 +68,29 @@ class _CrossFadeExampleState extends State<CrossFadeExample> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text('AnimatedCrossFade'),
+      appBar: AppBar(
+        title: const Text('AnimatedCrossFade'),
         centerTitle: true,
-        ),
-        body: GestureDetector(
-          onTap: _toggleCrossFade,
-          child: Center(
-            child: AnimatedCrossFade(
-              duration: const Duration(seconds: 1),
-              firstChild: Container(color: Colors.red, height: 100.0, width: 100.0),
-              secondChild: Container(color: Colors.blue, height: 200.0, width: 200.0),
-              crossFadeState:
-                  showFirst ? CrossFadeState.showFirst : CrossFadeState.showSecond,
-            ),
+      ),
+      body: GestureDetector(
+        onTap: _toggleCrossFade,
+        child: Center(
+          child: AnimatedCrossFade(
+            duration: const Duration(seconds: 1),
+            firstChild:
+                Container(color: Colors.red, height: 100.0, width: 100.0),
+            secondChild:
+                Container(color: Colors.blue, height: 200.0, width: 200.0),
+            reverseDuration: const Duration(seconds: 1),
+            crossFadeState: showFirst
+                ? CrossFadeState.showFirst
+                : CrossFadeState.showSecond,
+            //elasticOut
+            sizeCurve: Curves.linear,
+            //topLeft
+            alignment: Alignment.center,
           ),
+        ),
       ),
     );
   }

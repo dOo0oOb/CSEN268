@@ -19,8 +19,9 @@ class RotationState extends State<AnimatedRotationExample> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('AnimatedRotation'),
-      centerTitle: true,
+      appBar: AppBar(
+        title: const Text('AnimatedRotation'),
+        centerTitle: true,
       ),
       body: Center(
         child: Column(
@@ -34,8 +35,15 @@ class RotationState extends State<AnimatedRotationExample> {
               padding: const EdgeInsets.all(50),
               child: AnimatedRotation(
                 turns: turns,
+                //milliseconds: 500
                 duration: const Duration(seconds: 1),
-                child: const FlutterLogo(),
+                //bounceOut
+                curve: Curves.linear,
+                //topLeft
+                alignment: Alignment.center,
+                child: const FlutterLogo(
+                  size: 200.0,
+                ),
               ),
             ),
           ],
