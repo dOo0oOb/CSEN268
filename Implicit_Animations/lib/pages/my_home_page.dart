@@ -14,13 +14,12 @@ class HomePage extends StatelessWidget {
   final String title;
 
   final List<Widget> animationExamples = [
-    const AnimatedSwitcherExample(),
-    const HeroExample(),
-    const AnimatedRotationExample(),
     const AnimatedContainerExample(),
     const CombinedOpacityExample(),
     const AnimatedAlignExample(),
+    const AnimatedRotationExample(),
     const CrossFadeExample(),
+    const AnimatedSwitcherExample(),
   ];
 
   @override
